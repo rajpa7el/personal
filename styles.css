@@ -487,12 +487,29 @@ section{
 }
 
 .container .card .sci li {
-    margin: 0 10px;
+    margin: 0 8px;
     transform: translateY(40px);
     opacity: 0;
     transition: 0.5s;
     transition-delay: calc(0.1s * var(--i));
 }
+
+@media only screen and (max-width: 768px) {
+
+    .container .card .content {
+        opacity: 1;
+        transform: translateY(-20px);
+    }
+
+    .container .card .sci li {
+        margin-top: 15px;
+        opacity: 1;
+        transform: translateY(0); 
+        transition-delay: 0s; 
+    }
+
+    
+  }
 
 .container .card .sci li a {
     font-size: 17px;
