@@ -89,22 +89,23 @@ span{
     display: none;
 }
 
-/* Hide navigation menu on smaller screens */
-/* @media only screen and (max-width: 600px) {
-    .nav_list {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background-color: var(--bg-color);
-    }
-
-    #menu_icon {
-        display: block;
-    }
-} */
 
 /* Hide navigation menu on smaller screens */
 @media only screen and (max-width: 935px) {
+    
+    header {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1;
+        right: 0;
+        display: flex;
+        grid-gap: 10px;
+        padding: 22px 40px;
+        background-color: var(--bg-color);
+        transition: top 0.5s;
+        justify-content: space-between;
+    }
     .nav_list {
         position: fixed;
         top: 0;
@@ -115,6 +116,7 @@ span{
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        gap: 30px;
         background-color: var(--bg-color); 
         transition: all 0.35s ease;
         z-index: 2; 
@@ -144,17 +146,6 @@ section{
     align-items: center;
     justify-content: space-between;
     width: 100%;
-}
-
-@media only screen and (max-width: 600px) {
-    .home-content{
-        display: flex;
-        flex-direction: column;
-    }
-
-    .home-text h1{
-        font-size: 50px;
-    }
 }
 
 .home-text{
@@ -216,6 +207,24 @@ section{
     color: var(--second-color);
     line-height: 1.75;
 }
+
+@media only screen and (max-width: 600px) {
+    .home-content{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .home-text h1{
+        font-size: 50px;
+    }
+
+    .home-img{
+        margin-top: 25px;
+        flex: 1;
+        text-align: center;
+    }
+}
+
 
 /*====================== ABOUT SECTION ======================*/
 .about{
