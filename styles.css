@@ -153,16 +153,34 @@ section{
 }
 
 .dynamic-text {
-    border-right: 3px solid;
     white-space: nowrap;
-    display: inline-block; 
     animation: blinkCursor 0.75s steps(40) infinite normal;
+    min-width: 230px;
+    display: inline;
+    padding-right: 5px;
+
 }
+
+.dynamic-text-container {
+    min-width: 230px; 
+}
+
+.dynamic-text:after {
+    content: '';
+    display: inline-block;
+    width: 3px;
+    height: 1em; 
+    background: white;
+    animation: blinkCursor 0.75s steps(40) infinite normal;
+    vertical-align: middle;
+}
+
 
 @keyframes blinkCursor {
     from { border-right-color: transparent; }
     to { border-right-color: white }
 }
+
 
 .home-img{
     flex: 1;
