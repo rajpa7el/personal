@@ -357,12 +357,34 @@ section{
     padding: 30px;
     border-radius: 15px;
     transition: transform 0.3s ease-in-out;
+
+    position: relative;
+    overflow: hidden; /* Ensure the expanding circle is contained within the box */
+    transition: transform 0.3s ease-in-out; /* Transition for the scaling effect */
+}
+
+
+.box::before {
+    content: '';
+    position: absolute;
+    top: -75px; /* Position to match the course item effect */
+    right: -75px; /* Position to match the course item effect */
+    height: 128px;
+    width: 128px;
+    background-color: rgb(131, 128, 128); /* Initial background color, can be adjusted */
+    border-radius: 50%;
+    transition: transform 0.5s ease, background-color 0.5s ease; /* Transition for the hover effect */
+    z-index: -1;
+}
+
+.box:hover::before {
+    transform: scale(10); /* Expands the pseudo-element to cover the box */
 }
 
 
 
 .box:hover{
-    transform: translateY(-10px); 
+    transform: scale(1.05); 
 }
 
 .box h3{
